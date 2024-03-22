@@ -31,18 +31,21 @@ public class Menu {
     
     public void getMenu() {
         System.out.println("Menu disponible:");
-        checkDishAmount("Desayunos", getDishesPerType(DishType.BREAKFAST));
-        checkDishAmount("Almuerzos", getDishesPerType(DishType.LUNCH));
-        checkDishAmount("Cenas", getDishesPerType(DishType.DINNER));
+        for (DishType dishType : DishType.values()) {
+            checkDishAmount(""+dishType, getDishesPerType(dishType));
+        }
+        // checkDishAmount("Desayunos", getDishesPerType(DishType.BREAKFAST));
+        // checkDishAmount("Almuerzos", getDishesPerType(DishType.LUNCH));
+        // checkDishAmount("Cenas", getDishesPerType(DishType.DINNER));
     }
     
     void checkDishAmount(String output, ArrayList<String> arrayToPrint) {
-        if (arrayToPrint.size()>0) {
-            System.out.println(output);
-            System.out.println(arrayToPrint);
+        if (arrayToPrint.isEmpty()) {
+            System.out.println("There's no "+output.toLowerCase());
         }
         else {
-            System.out.println("No hay "+output);
+            System.out.println(output);
+            System.out.println(arrayToPrint);
         }
     }
 }

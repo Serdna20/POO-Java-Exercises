@@ -1,5 +1,6 @@
 package com.mycompany.restauranteuniversitario.customer;
 
+import com.mycompany.restauranteuniversitario.food.Dish;
 import com.mycompany.restauranteuniversitario.values.CustomerRole;
 
 public class Customer {
@@ -18,7 +19,15 @@ public class Customer {
     void sayMenu() {
     }
 
-    void buyFood() {
+    public void buyFood(Dish dish) {
+        if (dish.getQuantity()>0) {
+            dish.decreaseQuantity();
+            System.out.println("Dish {"+dish.getName()+"} sold! $"+getDishPrize(dish));
+            System.out.println("Come at: "+dish.getHour());
+        }
+        else {
+            System.out.println("No dishes available :(");
+        }
     }
 
     void cancelBuy() {
@@ -31,5 +40,13 @@ public class Customer {
             System.out.println("Hola");
         }
     }
-
+    
+    public int getDishPrize(Dish dish) {
+        if (this.role != CustomerRole.STUDENT) {
+            return 7000;
+        }
+        else {
+            return dish.getPrice();
+        }
+    }
 }

@@ -29,5 +29,10 @@ public class Dish {
     public String printDishInfo() {
         return name;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }  
+    
         
 }

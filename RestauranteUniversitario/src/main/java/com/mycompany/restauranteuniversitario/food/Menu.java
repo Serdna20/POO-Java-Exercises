@@ -21,7 +21,7 @@ public class Menu {
         // ArrayList<Dish> foundDishes = new ArrayList<>();
         ArrayList<String> foundDishes = new ArrayList<>();
         for (Dish dish : dishList) {
-            if (dish.getType() == dishType) {
+            if (dish.getType() == dishType && dish.getQuantity() > 0) {
                 foundDishes.add(dish.getName());
             }
         }

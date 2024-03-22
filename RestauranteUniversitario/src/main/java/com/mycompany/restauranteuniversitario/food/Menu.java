@@ -28,4 +28,21 @@ public class Menu {
         
         return foundDishes;
     }
+    
+    public void getMenu() {
+        System.out.println("Menu disponible:");
+        checkDishAmount("Desayunos", getDishesPerType(DishType.BREAKFAST));
+        checkDishAmount("Almuerzos", getDishesPerType(DishType.LUNCH));
+        checkDishAmount("Cenas", getDishesPerType(DishType.DINNER));
+    }
+    
+    void checkDishAmount(String output, ArrayList<String> arrayToPrint) {
+        if (arrayToPrint.size()>0) {
+            System.out.println(output);
+            System.out.println(arrayToPrint);
+        }
+        else {
+            System.out.println("No hay "+output);
+        }
+    }
 }

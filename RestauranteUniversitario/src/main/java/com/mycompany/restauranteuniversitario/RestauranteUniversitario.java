@@ -22,9 +22,10 @@ public class RestauranteUniversitario {
         
         menu.addDish(breakfast1); menu.addDish(breakfast2); menu.addDish(lunch1);
         
-        // FILTRAR PARA SOLO VER POR TIPO DE DISH TYPE
-        // Hacer para que muestre todo el menu
+        // FILTRAR PARA SOLO VER POR TIPO DE DISH TYPE        
         System.out.println(menu.getDishesPerType(DishType.BREAKFAST));
+        // Hacer para que muestre todo el menu
+        menu.getMenu();
         
     }
 }

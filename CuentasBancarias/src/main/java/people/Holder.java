@@ -9,9 +9,9 @@ public class Holder {
         this.money = 0;
     }
 
-    public Holder(String titular, double cantidad) {
-        this.name = titular;
-        this.money = cantidad;
+    public Holder(String name, double money) {
+        this.name = name;
+        this.money = money;
     }
 
     public String getName() {
@@ -35,16 +35,19 @@ public class Holder {
     public void consignMoney(double cantidad) {
         if (cantidad>=0) {
             this.money += cantidad;
+            System.out.println("Consignación realizada.");
+            return;
         }
-        else {
-            System.out.println("No se puede consignar.");
-        }
+        System.out.println("No se puede consignar.");
     }
     
     public void withdrawMoney(double money) {
         if (money <= this.money) {
             this.money -= money;
+            System.out.println("Retiración realizada.");
+            return;
         }
+        System.out.println("Saldo insuficiente.");
     }
     
     @Override

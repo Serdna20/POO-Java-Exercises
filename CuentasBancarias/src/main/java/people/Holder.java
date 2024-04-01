@@ -34,13 +34,16 @@ public class Holder {
     
     public void consignMoney(double cantidad) {
         if (cantidad>=0) {
-            this.money = this.money + cantidad;
+            this.money += cantidad;
+        }
+        else {
+            System.out.println("No se puede consignar.");
         }
     }
     
     public void withdrawMoney(double money) {
         if (money <= this.money) {
-            this.money = this.money - money;
+            this.money -= money;
         }
     }
     
